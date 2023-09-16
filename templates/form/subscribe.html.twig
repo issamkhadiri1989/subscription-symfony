@@ -1,0 +1,20 @@
+{% block _register_subscription_row -%}
+    {%- for child in form %}
+        <div class="col-4 radio-toolbar">
+            {{ form_label(child) }}
+            {{- form_widget(child, {}) -}}
+        </div>
+    {%- endfor -%}
+{%- endblock _register_subscription_row %}
+{% block _register_row %}
+    <div class="form-group row">
+        <div class="col-4">
+            {{ form_row(form.fullName, {'attr': {'class': 'form-control'}, 'label_attr': {'class': 'form-label'}}) }}
+            {{ form_row(form.phone, {'attr': {'class': 'form-control'}, 'label_attr': {'class': 'form-label'}}) }}
+            {{ form_row(form.identity, {'attr': {'class': 'form-control'}, 'label_attr': {'class': 'form-label'}}) }}
+        </div>
+    </div>
+    <div class="row mt-4">
+        {{ form_row(form.subscription) }}
+    </div>
+{% endblock _register_row %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link href="https://bootswatch.com/_assets/css/custom.min.css" rel="stylesheet"/>
+    <link href="https://bootswatch.com/_vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://bootswatch.com/5/flatly/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>

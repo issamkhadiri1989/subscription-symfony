@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'form/subscribe.html.twig' %}
+{% block stylesheets %}
+    <style>
+        .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            width: 0;
+        }
+        .radio-toolbar .card:hover, .radio-toolbar .card.active {
+            border: 4px solid #2563EB;
+            padding: 4px
+        }
+
+        .radio-toolbar .card.active .card-header {
+            background-color: #2563EB;
+            color: #fff;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form) }}
+    <button>Submit</button>
+    {{ form_end(form) }}
+{% endblock body %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            $('.radio-toolbar .card').on('click', function () {
+                $('.radio-toolbar .card').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+{% endblock %}
